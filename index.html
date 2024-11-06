@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DoFood - Food Delivery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(#ffc800 ,#ffa600);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:0px 30px;
+}
+
+.header {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.bike {
+    width: 35px;
+    transition: transform 0.5s ease;
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    cursor: pointer;
+}
+.logo span{
+    color: #fafafa;
+}
+
+.logo:hover .bike {
+    transform: translateX(75px);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+	height: 80vh;
+	margin-bottom: 0px;
+}
+
+
+.hero-content {
+    flex: 1;
+	margin-top: 100px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text {
+    font-size: 18px;
+    color: #fafafa;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.auth-container {
+    background: white;
+    padding: 30px;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    min-width: 400px;
+    
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.tab:hover{
+    transform: translateY(2px);
+}
+
+.tab.active {
+    background: #ffc800;
+    color: white;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field ::placeholder{
+	color:rgb(165, 165, 165);
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-field input:focus {
+    border-color: #FFD230;
+    box-shadow: 0 0 0 3px rgba(255, 210, 48, 0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #ffc800;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #ff9900;
+    transform: translateY(-2px);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.feature-card {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.responsive-image {
+    width: 250px;
+}
+
+@media (max-width: 768px) {
+
+    .logo{
+        font-size:20px ;
+    }
+    .bike{
+        max-width: 30px;
+    }
+    .logo:hover .bike {
+        transform: none;
+    }
+
+    .hero {
+        height: auto;
+        display: flex;
+        flex-direction: column;      
+    }
+    .tab{
+        border-radius: 10px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .auth-container {
+        border-radius: 20px 20px 0px 0px;
+        margin: 10px;
+        min-width: 300px;
+    }
+
+    .features {
+       display: flex;
+       flex-direction: column;
+    }
+
+    .feature-card img{
+        max-width: 150px;
+    }
+
+    .responsive-image {
+        width: 150px;
+    }
+}
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo"><span>Do</span>F<span><img class="bike" src="images/logo.png" alt=""></span>d.</div>
+        </header>
+        
+        <main class="hero">
+            <div class="hero-content">
+                <h3 class="hero-title">Just do <span>food.</span></h3>
+                <p class="hero-text"><b>Crave it? Do it.</b> Get your favorite meals delivered fast and fresh, with no hassle. DoFood brings the best flavors from local restaurants straight to your door – because when it’s time to eat, it’s time to <b><i>Do Food</i></b>.</p>
+				<div class="features">
+            
+					<div class="feature-card">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="images/burgir.png">
+                            <source media="(min-width: 769px)" srcset="images/food1.png">
+                            <img src="images/food1.png" class="responsive-image" alt="Responsive Image">
+                        </picture>
+                    </div>
+					
+                </div>    
+                
+            </div>
+
+            <div class="auth-container">
+                <div class="tabs">
+                    <div class="tab register-tab active">Sign Up</div>
+                    <div class="tab login-tab">Sign In</div>
+                </div>
+
+                <div class="form-container register-form active">
+                    <form action="Validation">
+                        <div class="input-field">
+                            <input type="text" placeholder="Name" name="username">
+                        </div>
+                        <div class="input-field">
+                            <input type="email" placeholder="Email Address" name="email">
+                        </div>
+                        <div class="input-field">
+                            <input type="password" placeholder="Create Password" name="password">
+                        </div>
+						<div class="input-field">
+							<input type="password" placeholder="Confirm Password" name="confirmpassword">
+						</div>
+                        <div class="input-field">
+							<input type="tel" placeholder="Phone Number" name="mobile">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Delivery Address" name="address">
+                        </div>
+                        <button type="submit" class="btn">Get Started</button>
+                    </form>
+                </div>
+
+                <div class="form-container login-form">
+                    <form action="login" method="post">
+                        <div class="input-field">
+                            <input type="email" placeholder="Email Address" name="email">
+                        </div>
+                        <div class="input-field">
+                            <input type="password" placeholder="Password" name="password">
+                        </div>
+                        <button type="submit" class="btn">Let's Eat! 🍕</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.querySelector('.register-tab').addEventListener('click', function() {
+            this.classList.add('active');
+            document.querySelector('.login-tab').classList.remove('active');
+            document.querySelector('.register-form').classList.add('active');
+            document.querySelector('.login-form').classList.remove('active');
+        });
+
+        document.querySelector('.login-tab').addEventListener('click', function() {
+            this.classList.add('active');
+            document.querySelector('.register-tab').classList.remove('active');
+            document.querySelector('.login-form').classList.add('active');
+            document.querySelector('.register-form').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
