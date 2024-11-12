@@ -262,12 +262,23 @@ body {
 
             <div class="auth-container">
                 <div class="tabs">
-                    <div class="tab register-tab active">Sign Up</div>
-                    <div class="tab login-tab">Sign In</div>
+                    <div class="tab login-tab active">Sign In</div>
+                    <div class="tab register-tab ">Sign Up</div>
+                </div>
+                <div class="form-container login-form active">
+                    <form action="restaurants.html" >
+                        <div class="input-field">
+                            <input type="email" placeholder="Email Address" name="email">
+                        </div>
+                        <div class="input-field">
+                            <input type="password" placeholder="Password" name="password">
+                        </div>
+                        <button type="submit" class="btn">Let's Eat! 🍕</button>
+                    </form>
                 </div>
 
-                <div class="form-container register-form active">
-                    <form action="Validation">
+                <div class="form-container register-form ">
+                    <form action="restaurants.html">
                         <div class="input-field">
                             <input type="text" placeholder="Name" name="username">
                         </div>
@@ -290,17 +301,6 @@ body {
                     </form>
                 </div>
 
-                <div class="form-container login-form">
-                    <form action="login" method="post">
-                        <div class="input-field">
-                            <input type="email" placeholder="Email Address" name="email">
-                        </div>
-                        <div class="input-field">
-                            <input type="password" placeholder="Password" name="password">
-                        </div>
-                        <button type="submit" class="btn">Let's Eat! 🍕</button>
-                    </form>
-                </div>
             </div>
         </main>
     </div>
