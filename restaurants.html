@@ -137,6 +137,47 @@
             -webkit-line-clamp:2;
             -webkit-box-orient: vertical;
         }
+        .restaurant-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .cuisine-type {
+            background-color: #f7c00e8f;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            gap: 4px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+        
+        .status-dot.active {
+            background-color: #28a745;
+        }
+        
+        .status-dot.inactive {
+            background-color: #dc3545;
+        }
+        
+        .status-text {
+            color: #666;
+        }
+        
 
         .restaurant-rating {
             display: flex;
@@ -176,6 +217,8 @@
             margin-right: 8px;
         }
 
+        
+
         @media (max-width: 1200px) {
             .restaurant-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -203,6 +246,7 @@
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
+                margin: 15px;
             }
         
             .header {
@@ -259,6 +303,8 @@
         
             .restaurant-card {
                 border-radius: 25px 25px 8px 8px;
+                margin-bottom: 10px;
+                
             }
         
             .restaurant-image {
@@ -302,6 +348,7 @@
             .restaurant-info {
                 padding: 12px;
             }
+
         }
     </style>
 </head>
@@ -342,6 +389,13 @@
                     <img src="images/rest2.jpeg" alt="Restaurant 1">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">South Indian</span>
+                        <div class="status-indicator">
+                            <span class="status-dot active"></span>
+                            <span class="status-text">Open Now</span>
+                        </div>
+                    </div>
                     <h3 class="restaurant-name">Mavalli Tiffin Room</h3>
                     <p class="restaurant-description">Authentic South Indian cuisine, specializing in dosas, idlis, and more. A Bangalore classic.</p>
                     <div class="restaurant-rating">
@@ -356,6 +410,13 @@
                     <img src="images/rest1.jpg" alt="Restaurant 2">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">Andhra</span>
+                        <div class="status-indicator">
+                            <span class="status-dot inactive"></span>
+                            <span class="status-text">Closed</span>
+                        </div>
+                    </div>
                     <h3 class="restaurant-name">Meghana Foods</h3>
                     <p class="restaurant-description">Delectable Andhra and Hyderabadi dishes, including signature biryanis and curries.</p>
                     <div class="restaurant-rating">
@@ -370,6 +431,13 @@
                     <img src="images/toit.jpg" alt="Restaurant 3">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">Pub Food</span>
+                        <div class="status-indicator">
+                            <span class="status-dot active"></span>
+                            <span class="status-text">Open Now</span>
+                        </div>
+                    </div>
                     <h3 class="restaurant-name">Toit Brewpub</h3>
                     <p class="restaurant-description">Craft beers and pub fare in a lively, industrial-chic setting. Great for friends and gatherings.</p>
                     <div class="restaurant-rating">
@@ -384,6 +452,13 @@
                     <img src="images/woodys.jpeg" alt="Restaurant 4">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">American</span>
+                        <div class="status-indicator">
+                            <span class="status-dot active"></span>
+                            <span class="status-text">Open Now</span>
+                        </div>
+                    </div>
                     <h3 class="restaurant-name">Woody's</h3>
                     <p class="restaurant-description">Casual joint serving American-style burgers, fries, and shakes in a cozy, rustic setting.</p>
                     <div class="restaurant-rating">
@@ -398,6 +473,13 @@
                     <img src="images/koshy.png" alt="Restaurant 5">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">Anglo-Indian</span>
+                        <div class="status-indicator">
+                            <span class="status-dot inactive"></span>
+                            <span class="status-text">Closed</span>
+                        </div>
+                    </div>
                     <h3 class="restaurant-name">Koshy's</h3>
                     <p class="restaurant-description">Historic cafe serving classic Malayali and Anglo-Indian dishes in a charming, vintage setting.</p>
                     <div class="restaurant-rating">
@@ -412,6 +494,13 @@
                     <img src="images/shiro.jpg" alt="Restaurant 7">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">Japanese</span>
+                        <div class="status-indicator">
+                            <span class="status-dot active"></span>
+                            <span class="status-text">Open Now</span>
+                        </div>
+                    </div>
                     <h3 class="restaurant-name">Shiro</h3>
                     <p class="restaurant-description">Shiro is an upscale Japanese restaurant that provides a luxurious dining experience.</p>
                     <div class="restaurant-rating">
@@ -426,6 +515,13 @@
                     <img src="images/bluetakoi.jpeg" alt="Restaurant 7">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">Cafe</span>
+                        <div class="status-indicator">
+                            <span class="status-dot active"></span>
+                            <span class="status-text">Open Now</span>
+                        </div>
+                    </div>                
                     <h3 class="restaurant-name">Blue Tokai Coffee Roasters</h3>
                     <p class="restaurant-description">Premium coffee roaster and cafe serving expertly-crafted brews and light bites.</p>
                     <div class="restaurant-rating">
@@ -440,6 +536,13 @@
                     <img src="images/savoury.jpg" alt="Restaurant 8">
                 </div>
                 <div class="restaurant-info">
+                    <div class="restaurant-status">
+                        <span class="cuisine-type">Middle Eastern</span>
+                        <div class="status-indicator">
+                            <span class="status-dot inactive"></span>
+                            <span class="status-text">Closed</span>
+                        </div>
+                    </div>
                     <h3 class="restaurant-name">Savoury - Sea Shell</h3>
                     <p class="restaurant-description">Known for its Middle Eastern and Indian cuisine, especially kebabs and biryanis. It has great appeal for quick, flavorful meals.</p>
                     <div class="restaurant-rating">
