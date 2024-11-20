@@ -99,7 +99,7 @@
             box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;            overflow: hidden;
             border: 1px solid #f0f0f0;
             box-shadow: 0 4px 10px #dfdfdf;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.1s ease-in-out;
         }
 
         .restaurant-card:hover {
@@ -115,8 +115,7 @@
         .restaurant-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            
+            object-fit: cover;            
         }
 
         .restaurant-info {
@@ -412,7 +411,7 @@
                 <i class="fas fa-coffee"></i>Cafe
             </div>
             <div class="cuisine-option">
-                <i class="fas fa-cocktail"></i>Drinks
+                <i class="fas fa-cocktail"></i>Middle Eastern
             </div>
         </div>
 
@@ -587,4 +586,45 @@
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cuisineOptions = document.querySelectorAll('.cuisine-option');
+        const restaurantCards = document.querySelectorAll('.restaurant-card');
+    
+        cuisineOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all cuisine options
+                cuisineOptions.forEach(opt => opt.classList.remove('active'));
+                
+                // Add active class to clicked option
+                option.classList.add('active');
+    
+                // Get the cuisine type text
+                const cuisineType = option.textContent.trim().toLowerCase();
+    
+                // Filter restaurants
+                restaurantCards.forEach(card => {
+                    const cardCuisineType = card.querySelector('.cuisine-type').textContent.trim().toLowerCase();
+                    
+                    // Show/hide based on matching cuisine
+                    if ( cardCuisineType.includes(cuisineType)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    
+        // Optional: Add styling for active cuisine option
+        const style = document.createElement('style');
+        style.textContent = `
+            .cuisine-option.active {
+                background-color: #ff9900;
+                color: white;
+            }
+        `;
+        document.head.appendChild(style);
+    });
+</script>
 </html>
